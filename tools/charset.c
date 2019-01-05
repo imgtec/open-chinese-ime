@@ -18,17 +18,25 @@ int main(int argc, const char *argv[])
 			count++;
 #if 1
 			/* EXCEL 格式 */
-			printf("%d,%c%c\n", count, r, c);
+			printf("%d,%c%c,\n", count, r, c);
 #else
 			putchar(r);
 			putchar(c);
 #endif
 			if(count >= 3755) break;
 		}
-		putchar('\n');
 	}
 
+	putchar('\n');
+
 	/* 二级汉字 3008 个 */
+	for(row = 56; row <= 87; row++) {
+		for(col=1; col <= 94; col++) {
+			count++;
+			printf("%d,%c%c,\n", count, row+0xa0, col+0xa0);
+			if(count >= 6763) break;
+		}
+	}
 
 	printf("%d\n", count);
 
